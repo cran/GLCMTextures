@@ -1,17 +1,16 @@
 README
 ================
 Alexander Ilich
-October 04, 2022
+January 30, 2023
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ailich/GLCMTextures/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ailich/GLCMTextures/actions/workflows/R-CMD-check.yaml)
-
+[![CRAN](https://www.r-pkg.org/badges/version/GLCMTextures)](https://cran.r-project.org/package=GLCMTextures)
+[![License:
+GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![DOI](https://zenodo.org/badge/299630902.svg)](https://zenodo.org/badge/latestdoi/299630902)
-
-<!-- badges: end -->
-
-Please cite as
+<!-- badges: end --> Please cite as
 
 Ilich, Alexander R. 2020. “GLCMTextures.”,
 <https://doi.org/10.5281/zenodo.4310186>.
@@ -46,13 +45,14 @@ how and if the data should be quantized.
 
 ## Install and Load Package
 
-If you don’t already have remotes installed, use the code
-`install.packages("remotes")`
-
-Then to install this package use the code
-`remotes::install_github("ailich/GLCMTextures")` (If you are using
+The package can be installed from CRAN using
+`install.packages("GLCMTextures")` or the development version can be
+installed from github using the code
+`remotes::install_github("ailich/GLCMTextures")`. If you are using
 Windows, you may need to install Rtools using the instructions found
-[here](https://cran.r-project.org/bin/windows/Rtools/)).
+[here](https://cran.r-project.org/bin/windows/Rtools/)). To install from
+github you must already have the remotes package installed, which can be
+installed using `install.packages("remotes")`
 
 This package relies on the `terra` package for handling of spatial
 raster data.
@@ -94,25 +94,25 @@ having gray levels i & j
 
 ### Contrast Group
 
-![\text{GLCM Contrast} = \sum\_{i,j=0}^{N-1} {P\_{i,j}(i-j)^2}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Contrast%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%7BP_%7Bi%2Cj%7D%28i-j%29%5E2%7D "\text{GLCM Contrast} = \sum_{i,j=0}^{N-1} {P_{i,j}(i-j)^2}")
+$$\text{GLCM Contrast} = \sum_{i,j=0}^{N-1} {P_{i,j}(i-j)^2}$$
 
-![\text{GLCM Dissimilarity} = \sum\_{i,j=0}^{N-1} {P\_{i,j}\|i-j\|}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Dissimilarity%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%7BP_%7Bi%2Cj%7D%7Ci-j%7C%7D "\text{GLCM Dissimilarity} = \sum_{i,j=0}^{N-1} {P_{i,j}|i-j|}")
+$$\text{GLCM Dissimilarity} = \sum_{i,j=0}^{N-1} {P_{i,j}|i-j|}$$
 
-![\text{GLCM Homogeneity} = \sum\_{i,j=0}^{N-1} \frac{P\_{i,j}}{1+(i-j)^2}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Homogeneity%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%5Cfrac%7BP_%7Bi%2Cj%7D%7D%7B1%2B%28i-j%29%5E2%7D "\text{GLCM Homogeneity} = \sum_{i,j=0}^{N-1} \frac{P_{i,j}}{1+(i-j)^2}")
+$$\text{GLCM Homogeneity} = \sum_{i,j=0}^{N-1} \frac{P_{i,j}}{1+(i-j)^2}$$
 
 ### Orderliness Group
 
-![\text{GLCM Angular Second Moment (ASM)} = \sum\_{i,j=0}^{N-1} {P\_{i,j}^2}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Angular%20Second%20Moment%20%28ASM%29%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%7BP_%7Bi%2Cj%7D%5E2%7D "\text{GLCM Angular Second Moment (ASM)} = \sum_{i,j=0}^{N-1} {P_{i,j}^2}")
+$$\text{GLCM Angular Second Moment (ASM)} = \sum_{i,j=0}^{N-1} {P_{i,j}^2}$$
 
-![\text{GLCM Entropy} = \sum\_{i,j=0}^{N-1} {P\_{i,j}\[-ln(P\_{i,j})\]} \text{ where } 0\*ln(0)=0](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Entropy%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%7BP_%7Bi%2Cj%7D%5B-ln%28P_%7Bi%2Cj%7D%29%5D%7D%20%5Ctext%7B%20where%20%7D%200%2Aln%280%29%3D0 "\text{GLCM Entropy} = \sum_{i,j=0}^{N-1} {P_{i,j}[-ln(P_{i,j})]} \text{ where } 0*ln(0)=0")
+$$\text{GLCM Entropy} = \sum_{i,j=0}^{N-1} {P_{i,j}[-ln(P_{i,j})]} \text{ where } 0*ln(0)=0$$
 
 ### Descriptive Statistics Group
 
-![\text{GLCM Mean} (\mu) = \sum\_{i,j=0}^{N-1} i(P\_{i,j})](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Mean%7D%20%28%5Cmu%29%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20i%28P_%7Bi%2Cj%7D%29 "\text{GLCM Mean} (\mu) = \sum_{i,j=0}^{N-1} i(P_{i,j})")
+$$\text{GLCM Mean} (\mu) = \sum_{i,j=0}^{N-1} i(P_{i,j})$$
 
-![\text{GLCM Variance} (\sigma^2) = \sum\_{i,j=0}^{N-1} P\_{i,j}(i-\mu)^2](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Variance%7D%20%28%5Csigma%5E2%29%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20P_%7Bi%2Cj%7D%28i-%5Cmu%29%5E2 "\text{GLCM Variance} (\sigma^2) = \sum_{i,j=0}^{N-1} P_{i,j}(i-\mu)^2")
+$$\text{GLCM Variance} (\sigma^2) = \sum_{i,j=0}^{N-1} P_{i,j}(i-\mu)^2$$
 
-![\text{GLCM Correlation} = \sum\_{i,j=0}^{N-1} {P\_{i,j} \frac{(i-\mu)(j-\mu)}{\sigma^2}}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctext%7BGLCM%20Correlation%7D%20%3D%20%5Csum_%7Bi%2Cj%3D0%7D%5E%7BN-1%7D%20%7BP_%7Bi%2Cj%7D%20%5Cfrac%7B%28i-%5Cmu%29%28j-%5Cmu%29%7D%7B%5Csigma%5E2%7D%7D "\text{GLCM Correlation} = \sum_{i,j=0}^{N-1} {P_{i,j} \frac{(i-\mu)(j-\mu)}{\sigma^2}}")
+$$\text{GLCM Correlation} = \sum_{i,j=0}^{N-1} {P_{i,j} \frac{(i-\mu)(j-\mu)}{\sigma^2}}$$
 
 ## Tutorial
 

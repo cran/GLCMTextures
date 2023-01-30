@@ -1,4 +1,4 @@
-b14a89a211c8b67c3b85de8e69032dc8 *DESCRIPTION
+862fd1995ae3eb8976fedb693cb0f82f *DESCRIPTION
 5c33bb6bd174f9b2fdec3428aef27091 *NAMESPACE
 7fede06404d247f777b4d0ba58d3e012 *R/GLCMTextures-package.R
 1d1e06c5a673156c77f9cd0adcb68f14 *R/RcppExports.R
@@ -6,7 +6,7 @@ b14a89a211c8b67c3b85de8e69032dc8 *DESCRIPTION
 ab2a91d4a647e704e96153d5c30b1b6c *R/glcm_textures.R
 265c13784bae20ee7b2fcdd296913b52 *R/make_glcm.R
 002cddb86052f43a7b98abf9da4cca83 *R/quantize_raster.R
-709da50c8e6a952ffddfd8657377a8a5 *README.md
+05498709fddb0e999cad4e8ec2e28994 *README.md
 497d563d8bb6b4fabf12d21cd051ba3b *inst/CITATION
 9819992092e89d1cdeb3547872cfdb91 *man/figures/GLCM_Shift.png
 72b789c7822afd22d65e24318e31f9ec *man/figures/README-unnamed-chunk-10-1.png
@@ -18,7 +18,7 @@ fd5f19c3869a110c318d58cc4bc94cfc *man/glcm_metrics.Rd
 c3654a6961367c4f2bf86fb9c3fd5150 *man/glcm_textures.Rd
 d4dc03e371ef2a621fcf9e5939da7d3b *man/make_glcm.Rd
 8f2fa185b6ebaa6f548ed4e2f1c0f87c *man/quantize_raster.Rd
-e4a9a47c4a3aca98677ab8b16336e5de *src/Makevars
-e4a9a47c4a3aca98677ab8b16336e5de *src/Makevars.win
+923ea7172bd05c6523284e898c090b5f *src/Makevars
+923ea7172bd05c6523284e898c090b5f *src/Makevars.win
 a2ccfdd0740bb6952953f65d3afd9651 *src/RcppExports.cpp
-2d3ca9352f3f707fb3e89936d3a5b179 *src/glcm_cpp_functions.cpp
+2953c79fd86038b0781eab5319c7dc00 *src/glcm_cpp_functions.cpp
