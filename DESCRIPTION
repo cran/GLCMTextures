@@ -1,6 +1,6 @@
 Package: GLCMTextures
 Title: GLCM Textures of Raster Layers
-Version: 0.6.2
+Version: 0.6.3
 Authors@R: 
     person(given = "Alexander",
            family = "Ilich",
@@ -22,9 +22,9 @@ URL: https://ailich.github.io/GLCMTextures/,
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2025-05-21 20:41:51 UTC; socce
+Packaged: 2025-07-31 22:55:56 UTC; socce
 Author: Alexander Ilich [aut, cre] (ORCID:
     <https://orcid.org/0000-0003-1758-8499>)
 Maintainer: Alexander Ilich <ailich@usf.edu>
 Repository: CRAN
-Date/Publication: 2025-05-22 05:00:24 UTC
+Date/Publication: 2025-08-01 12:20:02 UTC
